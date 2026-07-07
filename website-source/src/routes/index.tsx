@@ -127,7 +127,7 @@ function Services() {
           {delhiRoutes.map((r) => (
             <a
               key={r}
-              href={`https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20book%20a%20cab%20from%20Delhi%20to%20${encodeURIComponent(r)}.`}
+              href={`https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20book%20a%20cab%20from%20Delhi%20to%20${encodeURIComponent(r)}.`}
               target="_blank"
               rel="noreferrer"
               className="group flex items-center justify-between gap-2 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-royal"
@@ -173,7 +173,7 @@ function Services() {
                     ))}
                   </ul>
                   <div className="mt-6 flex gap-3">
-                    <a href={`https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(p.from + " to " + p.to)}%20tour.`}
+                    <a href={`https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(p.from + " to " + p.to)}%20tour.`}
                       target="_blank" rel="noreferrer"
                       className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-royal px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-royal transition hover:opacity-95">
                       <MessageCircle className="h-4 w-4" /> Book
@@ -198,7 +198,7 @@ function Services() {
             Tell us your dates and destinations — we'll craft a tour with the right vehicle, hotels and timing.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-4">
-            <a href="tel:+919999999999"
+            <a href="tel:+919876543210"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3 font-semibold text-gold-foreground shadow-gold transition hover:opacity-90">
               <Clock className="h-4 w-4" /> Call 24/7
             </a>
