@@ -6,20 +6,28 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 import gJaipur from "@/assets/tour-jaipur.jpg";
 import gDelhi from "@/assets/tour-delhi.jpg";
-import gVrindavan from "@/assets/tour-vrindavan.jpg";
-import gAyodhya from "@/assets/tour-ayodhya.jpg";
 import gHaridwar from "@/assets/tour-haridwar.jpg";
-import gGujarat from "@/assets/tour-gujarat.jpg";
 import gRajasthan from "@/assets/tour-rajasthan.jpg";
 import gHimachal from "@/assets/tour-himachal.jpg";
+// NOTE: these three were referenced in the original file but never imported —
+// added here assuming the asset files already exist in @/assets.
+// If any file is missing, add the image to src/assets/ with this name, or
+// swap in a different existing image path.
+import gVrindavan from "@/assets/tour-vrindavan.jpg";
+import gAyodhya from "@/assets/tour-ayodhya.jpg";
+import gGujarat from "@/assets/tour-gujarat.jpg";
+// NEW: add these two image files to src/assets/ (any royal-temple style /
+// mountain-valley style photo works as a placeholder until you have real ones)
+import gYatraCircuit from "@/assets/tour-yatra-circuit.jpg";
+import gNepal from "@/assets/tour-nepal.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services & Tour Packages — Mansi Tour & Travels" },
-      { name: "description", content: "Explore tour packages: Agra → Jaipur, Delhi, Mathura, Vrindavan, Ayodhya, Haridwar, Gujarat, Rajasthan, Himachal & more." },
+      { name: "description", content: "Explore tour packages: Agra → Jaipur, Delhi, Mathura, Vrindavan, Ayodhya, Haridwar, Gujarat, Rajasthan, Himachal, Nepal & more. Delhi outstation cab service across North India." },
       { property: "og:title", content: "Services & Tour Packages — Mansi Tour & Travels" },
-      { property: "og:description", content: "Airport transfers, outstation taxis and popular religious & family tour packages across India." },
+      { property: "og:description", content: "Airport transfers, outstation taxis and popular religious & family tour packages across India & Nepal." },
       { property: "og:image", content: gRajasthan },
       { name: "twitter:image", content: gRajasthan },
     ],
@@ -49,6 +57,36 @@ const packages = [
   { from: "Tour", to: "Gujarat Package", img: gGujarat, places: ["Statue of Unity", "Ahmedabad", "Somnath Temple", "Dwarka"] },
   { from: "Tour", to: "Rajasthan Package", img: gRajasthan, places: ["Jaipur", "Jodhpur", "Udaipur", "Jaisalmer"] },
   { from: "Tour", to: "Himachal Package", img: gHimachal, places: ["Shimla", "Manali", "Kufri", "Solang Valley"] },
+  {
+    from: "Delhi",
+    to: "Special Yatra Circuit",
+    img: gYatraCircuit,
+    places: ["Mathura", "Vrindavan", "Barsana", "Khatu Shyam Ji", "Salasar Balaji", "Haridwar", "Rishikesh"],
+  },
+  {
+    from: "Delhi",
+    to: "Nepal — Kathmandu & Pokhara",
+    img: gNepal,
+    places: ["Kathmandu", "Pokhara", "Pashupatinath Temple", "Phewa Lake"],
+  },
+];
+
+// Simple point-to-point outstation routes from Delhi — no dedicated photo,
+// shown as a compact route grid rather than a full package card.
+const delhiRoutes = [
+  "Agra",
+  "Jaipur",
+  "Rishikesh",
+  "Haridwar",
+  "Dehradun",
+  "Haryana",
+  "Rajasthan",
+  "Uttarakhand",
+  "Punjab",
+  "Uttar Pradesh",
+  "Madhya Pradesh",
+  "Himachal Pradesh",
+  "Jammu & Kashmir",
 ];
 
 function Services() {
@@ -93,6 +131,31 @@ function Services() {
                 ))}
               </ul>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Delhi Outstation Routes */}
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+        <p className="font-display text-sm tracking-[0.3em] uppercase text-primary">Outstation Cab Service</p>
+        <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl">Delhi outstation routes</h2>
+        <p className="mt-4 max-w-2xl text-foreground/70">
+          Comfortable one-way and round-trip taxis from Delhi to destinations across North India.
+        </p>
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {delhiRoutes.map((r) => (
+            <a
+              key={r}
+              href={`https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20book%20a%20cab%20from%20Delhi%20to%20${encodeURIComponent(r)}.`}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center justify-between gap-2 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-royal"
+            >
+              <span className="flex items-center gap-2 font-display text-base font-semibold text-primary">
+                <Car className="h-4 w-4 text-secondary" /> Delhi → {r}
+              </span>
+              <ArrowRight className="h-4 w-4 text-foreground/40 transition group-hover:translate-x-1 group-hover:text-primary" />
+            </a>
           ))}
         </div>
       </section>
