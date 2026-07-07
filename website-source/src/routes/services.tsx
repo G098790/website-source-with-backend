@@ -4,18 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 
-import gJaipur from "@/assets/tour-jaipur.jpg";
-import gDelhi from "@/assets/tour-delhi.jpg";
-import gHaridwar from "@/assets/tour-haridwar.jpg";
 import gRajasthan from "@/assets/tour-rajasthan.jpg";
-import gHimachal from "@/assets/tour-himachal.jpg";
-// NOTE: these three were referenced in the original file but never imported —
-// added here assuming the asset files already exist in @/assets.
-// If any file is missing, add the image to src/assets/ with this name, or
-// swap in a different existing image path.
-import gVrindavan from "@/assets/tour-vrindavan.jpg";
-import gAyodhya from "@/assets/tour-ayodhya.jpg";
-import gGujarat from "@/assets/tour-gujarat.jpg";
 // NEW: add these two image files to src/assets/ (any royal-temple style /
 // mountain-valley style photo works as a placeholder until you have real ones)
 import gYatraCircuit from "@/assets/tour-yatra-circuit.jpg";
@@ -25,9 +14,9 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services & Tour Packages — Mansi Tour & Travels" },
-      { name: "description", content: "Explore tour packages: Agra → Jaipur, Delhi, Mathura, Vrindavan, Ayodhya, Haridwar, Gujarat, Rajasthan, Himachal, Nepal & more. Delhi outstation cab service across North India." },
+      { name: "description", content: "Delhi outstation taxi service to Agra, Jaipur, Rishikesh, Haridwar, Dehradun, Haryana, Rajasthan, Uttarakhand, Punjab, Uttar Pradesh, Madhya Pradesh, Himachal Pradesh, Jammu & Kashmir, plus the Mathura-Vrindavan-Barsana yatra circuit and Nepal tours." },
       { property: "og:title", content: "Services & Tour Packages — Mansi Tour & Travels" },
-      { property: "og:description", content: "Airport transfers, outstation taxis and popular religious & family tour packages across India & Nepal." },
+      { property: "og:description", content: "Airport transfers, Delhi outstation taxis and religious yatra & Nepal tour packages." },
       { property: "og:image", content: gRajasthan },
       { name: "twitter:image", content: gRajasthan },
     ],
@@ -49,14 +38,6 @@ const core = [
 ];
 
 const packages = [
-  { from: "Agra", to: "Jaipur", img: gJaipur, places: ["Hawa Mahal", "Amer Fort", "Jal Mahal", "City Palace"] },
-  { from: "Agra", to: "Delhi", img: gDelhi, places: ["India Gate", "Red Fort", "Qutub Minar", "Lotus Temple"] },
-  { from: "Agra", to: "Mathura & Vrindavan", img: gVrindavan, places: ["Krishna Janmabhoomi", "Prem Mandir", "Banke Bihari Temple"] },
-  { from: "Agra", to: "Ayodhya", img: gAyodhya, places: ["Ram Mandir", "Hanuman Garhi", "Saryu Ghat"] },
-  { from: "Agra", to: "Haridwar & Rishikesh", img: gHaridwar, places: ["Har Ki Pauri", "Ganga Aarti", "Laxman Jhula"] },
-  { from: "Tour", to: "Gujarat Package", img: gGujarat, places: ["Statue of Unity", "Ahmedabad", "Somnath Temple", "Dwarka"] },
-  { from: "Tour", to: "Rajasthan Package", img: gRajasthan, places: ["Jaipur", "Jodhpur", "Udaipur", "Jaisalmer"] },
-  { from: "Tour", to: "Himachal Package", img: gHimachal, places: ["Shimla", "Manali", "Kufri", "Solang Valley"] },
   {
     from: "Delhi",
     to: "Special Yatra Circuit",
@@ -146,7 +127,7 @@ function Services() {
           {delhiRoutes.map((r) => (
             <a
               key={r}
-              href={`https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20book%20a%20cab%20from%20Delhi%20to%20${encodeURIComponent(r)}.`}
+              href={`https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20book%20a%20cab%20from%20Delhi%20to%20${encodeURIComponent(r)}.`}
               target="_blank"
               rel="noreferrer"
               className="group flex items-center justify-between gap-2 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-royal"
@@ -192,7 +173,7 @@ function Services() {
                     ))}
                   </ul>
                   <div className="mt-6 flex gap-3">
-                    <a href={`https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(p.from + " to " + p.to)}%20tour.`}
+                    <a href={`https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(p.from + " to " + p.to)}%20tour.`}
                       target="_blank" rel="noreferrer"
                       className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-royal px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-royal transition hover:opacity-95">
                       <MessageCircle className="h-4 w-4" /> Book
@@ -217,7 +198,7 @@ function Services() {
             Tell us your dates and destinations — we'll craft a tour with the right vehicle, hotels and timing.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-4">
-            <a href="tel:+919999999999"
+            <a href="tel:919876543210"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3 font-semibold text-gold-foreground shadow-gold transition hover:opacity-90">
               <Clock className="h-4 w-4" /> Call 24/7
             </a>
