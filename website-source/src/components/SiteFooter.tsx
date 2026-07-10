@@ -35,10 +35,10 @@ export function SiteFooter() {
         <div>
           <h4 className="font-display text-lg text-secondary">Contact</h4>
           <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex gap-2"><Phone className="h-4 w-4 text-secondary" /> +91 99999 99999</li>
-            <li className="flex gap-2"><MessageCircle className="h-4 w-4 text-secondary" /> WhatsApp: +91 99999 99999</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 text-secondary" /> info@mansitours.in</li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 text-secondary" /> Taj Ganj, Agra, Uttar Pradesh, India</li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 text-secondary" />+91 93549 17842</li>
+            <li className="flex gap-2"><MessageCircle className="h-4 w-4 text-secondary" /> WhatsApp: +91 93549 17842</li>
+            <li className="flex gap-2"><Mail className="h-4 w-4 text-secondary" /> mansitourandtravel@gmail.com</li>
+            <li className="flex gap-2"><MapPin className="h-4 w-4 text-secondary" /> H.No. X-156/2 Gali no. 11 Bhrampuri Near By Shiv Mandir Third pusta Delhi -110053</li>
           </ul>
         </div>
 
