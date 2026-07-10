@@ -16,8 +16,13 @@ const inquirySchema = z.object({
 export type Inquiry = z.infer<typeof inquirySchema>;
 
 export const submitInquiry = createServerFn({ method: "POST" })
-  .inputValidator(inquirySchema)
+  .validator(inquirySchema) // replaces deprecated inputValidator
   .handler(async ({ data }) => {
-    const { saveInquiry } = await import("./inquiries.server");
-    return saveInquiry(data);
+    try {
+      const { saveInquiry } = await import("./inquiries.server");
+      return await saveInquiry(data);
+    } catch (error) {
+      console.error("SUBMIT INQUIRY ERROR:", error);
+      throw error;
+    }
   });
